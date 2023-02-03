@@ -6,7 +6,7 @@ namespace MyTasks.Core.Models
     {
         public string Title { get; set; }
 
-        public int CategoryID { get; set; }
+        public int CategoryId { get; set; }
 
         [Display(Name="Tylko zrealizowane")]
         public bool IsExecuted { get; set; }

@@ -13,7 +13,7 @@
             @Html.TextBoxFor(x => x.FilterTasks.Title, new { @class = "form-control mb-2", placeholder = "Tytuł" })
     </div>
     <div class="col-auto">
-            @Html.DropDownListFor(x => x.FilterTasks.CategoryID, new SelectList(Model.Categories, "Id", "Name"), "-- wybierz kategrię --", new { @class = "form-control mb-2" })
+            @Html.DropDownListFor(x => x.FilterTasks.CategoryId, new SelectList(Model.Categories, "Id", "Name"), "-- wybierz kategrię --", new { @class = "form-control mb-2" })
     </div>
     <div class="col-auto">
       <div class="form-check mb-2">
@@ -46,7 +46,7 @@
                     url: "@Url.Action("Tasks", "Task")",
                     data: $(this).serialize(),
                     success: function (data) {
-                        $('#tasksTable').html(data)
+                        $('#tasksTable').html(data);
                     },
                     error: function (data) {
                         alert(data.message)
@@ -69,7 +69,7 @@
                 url: "@Url.Action("Delete", "Task")",
                 data: { 
                     id: id
-                }
+                },
                 success: function (data) {
                     if (data.success) {
                         var row = btn.parentNode.parentNode;
@@ -96,7 +96,7 @@
                 url: "@Url.Action("Finish", "Task")",
                 data: {
                     id: id
-                }
+                },
                 success: function (data) {
                     if (data.success) {
                         var row = btn.parentNode.parentNode;
